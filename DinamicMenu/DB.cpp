@@ -16,7 +16,7 @@ void DB::CloseCon() {
 }
 
 DataTable^ DB::getData() {
-	String^ sql = "select nombre,edad,carrera from persona";
+	String^ sql = "select nom,age,formation from persona";
 	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
 	MySqlDataAdapter^ data = gcnew MySqlDataAdapter(cursor);
 	DataTable^ table = gcnew DataTable();
@@ -25,7 +25,7 @@ DataTable^ DB::getData() {
 }
 
 void DB::AddClient(String^ n, String^ e, String^ c) {
-	String^ sql = "insert into persona(nombre,edad,carrera) values('"+n+"',"+e+",'"+c+"')";
+	String^ sql = "insert into persona(nom,age,formation) values('"+n+"',"+e+",'"+c+"')";
 	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
 	try
 	{
@@ -66,8 +66,8 @@ Boolean^ DB::GetByName(String^ login, String^ pass) {
 	return log;
 }
 
-void DB::Modificar(String^ n, String^ e, String^ c, String^ ref) {
-	String^ sql = "update persona set nombre='"+n+"', edad="+e+", carrera='"+c+"' where nombre='" + ref + "'";
+void DB::Modificar(String^ n, String^ a, String^ f, String^ ref) {
+	String^ sql = "update persona set nom='"+n+"', age="+a+", formation='"+f+"' where nom='" + ref + "'";
 	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
 	try
 	{
@@ -83,13 +83,29 @@ void DB::Modificar(String^ n, String^ e, String^ c, String^ ref) {
 }
 
 void DB::Eliminar(String^ n) {
-	String^ sql = "delete from persona where nombre='" + n + "'";
+	String^ sql = "delete from persona where nom='" + n + "'";
 	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
 	try
 	{
 		using namespace System::Windows::Forms;
 		cursor->ExecuteNonQuery();
-		MessageBox::Show(L"Eliminado correctamente");
+		MessageBox::Show(L"Supprimé avec succès.");
+	}
+	catch (Exception^ e)
+	{
+		using namespace System::Windows::Forms;
+		using namespace System::Data;
+		using namespace System::Drawing;
+		MessageBox::Show(e->Message);
+	}
+}
+
+void DB::AddUser(String^ name, String^ pass) {
+	String^ sql = "insert into users(name,pswd) values('" + name + "','" + pass + "')";
+	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
+	try
+	{
+		cursor->ExecuteNonQuery();
 	}
 	catch (Exception^ e)
 	{

@@ -106,33 +106,33 @@ namespace DinamicMenu {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(99, 89);
+			this->label1->Location = System::Drawing::Point(92, 89);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(110, 30);
+			this->label1->Size = System::Drawing::Size(71, 30);
 			this->label1->TabIndex = 6;
-			this->label1->Text = L"Nombre";
+			this->label1->Text = L"Nom";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(99, 170);
+			this->label2->Location = System::Drawing::Point(92, 170);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(74, 30);
+			this->label2->Size = System::Drawing::Size(62, 30);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"Edad";
+			this->label2->Text = L"Âge";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(99, 253);
+			this->label3->Location = System::Drawing::Point(92, 253);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(102, 30);
+			this->label3->Size = System::Drawing::Size(133, 30);
 			this->label3->TabIndex = 8;
-			this->label3->Text = L"Carrera";
+			this->label3->Text = L"Formation";
 			// 
 			// btn_guardar
 			// 
@@ -145,7 +145,7 @@ namespace DinamicMenu {
 			this->btn_guardar->Name = L"btn_guardar";
 			this->btn_guardar->Size = System::Drawing::Size(162, 39);
 			this->btn_guardar->TabIndex = 9;
-			this->btn_guardar->Text = L"Guardad";
+			this->btn_guardar->Text = L"Enregistrer";
 			this->btn_guardar->UseVisualStyleBackColor = false;
 			this->btn_guardar->Click += gcnew System::EventHandler(this, &Modificar::btn_guardar_Click);
 			// 
@@ -160,7 +160,7 @@ namespace DinamicMenu {
 			this->btn_cancelar->Name = L"btn_cancelar";
 			this->btn_cancelar->Size = System::Drawing::Size(162, 39);
 			this->btn_cancelar->TabIndex = 10;
-			this->btn_cancelar->Text = L"Cancelar";
+			this->btn_cancelar->Text = L"Annuler";
 			this->btn_cancelar->UseVisualStyleBackColor = false;
 			this->btn_cancelar->Click += gcnew System::EventHandler(this, &Modificar::btn_cancelar_Click);
 			// 
@@ -179,8 +179,9 @@ namespace DinamicMenu {
 			this->Controls->Add(this->txt_carrera);
 			this->Controls->Add(this->txt_edad);
 			this->Controls->Add(this->txt_nombre);
-			this->Name = L"Modificar";
-			this->Text = L"Modificar";
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Name = L"Modifier";
+			this->Text = L"Modifier";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -188,7 +189,7 @@ namespace DinamicMenu {
 #pragma endregion
 
 	private: System::Void btn_guardar_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show(L"Modificado correctamente.");
+		MessageBox::Show(L"Modifié avec succès.");
 		this->Close();
 	}
 	private: System::Void btn_cancelar_Click(System::Object^ sender, System::EventArgs^ e) {

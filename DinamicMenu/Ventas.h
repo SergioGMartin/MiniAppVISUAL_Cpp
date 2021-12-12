@@ -62,9 +62,9 @@ namespace DinamicMenu {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(314, 253);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(118, 34);
+			this->label1->Size = System::Drawing::Size(112, 34);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"VENTAS";
+			this->label1->Text = L"VENTES";
 			// 
 			// label_cerrar
 			// 

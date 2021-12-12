@@ -159,6 +159,9 @@
     <ClInclude Include="Modificar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="NewUser.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Ventas.h">
@@ -174,6 +177,7 @@
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Modificar.cpp" />
+    <ClCompile Include="NewUser.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar.resx">
       <DependentUpon>Modificar.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUser.resx">
+      <DependentUpon>NewUser.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.h</DependentUpon>

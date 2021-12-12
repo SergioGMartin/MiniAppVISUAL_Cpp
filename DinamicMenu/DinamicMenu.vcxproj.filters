@@ -47,6 +47,9 @@
     <ClInclude Include="Login.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="NewUser.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -77,6 +80,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Login.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="NewUser.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -108,7 +108,7 @@ namespace CppCLRWinformsProjekt {
 			this->btn_ventas->Name = L"btn_ventas";
 			this->btn_ventas->Size = System::Drawing::Size(290, 50);
 			this->btn_ventas->TabIndex = 3;
-			this->btn_ventas->Text = L"Ventas";
+			this->btn_ventas->Text = L"Ventes";
 			this->btn_ventas->UseVisualStyleBackColor = false;
 			this->btn_ventas->Click += gcnew System::EventHandler(this, &Form1::btn_ventas_Click);
 			// 
@@ -124,7 +124,7 @@ namespace CppCLRWinformsProjekt {
 			this->btn_clientes->Name = L"btn_clientes";
 			this->btn_clientes->Size = System::Drawing::Size(290, 50);
 			this->btn_clientes->TabIndex = 2;
-			this->btn_clientes->Text = L"Clientes";
+			this->btn_clientes->Text = L"Clients";
 			this->btn_clientes->UseVisualStyleBackColor = false;
 			this->btn_clientes->Click += gcnew System::EventHandler(this, &Form1::btn_clientes_Click);
 			// 
@@ -139,7 +139,7 @@ namespace CppCLRWinformsProjekt {
 			this->btn_inicio->Name = L"btn_inicio";
 			this->btn_inicio->Size = System::Drawing::Size(290, 50);
 			this->btn_inicio->TabIndex = 1;
-			this->btn_inicio->Text = L"Inicio";
+			this->btn_inicio->Text = L"Accueil";
 			this->btn_inicio->UseVisualStyleBackColor = false;
 			this->btn_inicio->Click += gcnew System::EventHandler(this, &Form1::btn_inicio_Click);
 			// 
@@ -180,13 +180,13 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// label1
 			// 
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(184, 72);
+			this->label1->Location = System::Drawing::Point(223, 72);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(487, 181);
+			this->label1->Size = System::Drawing::Size(407, 181);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"BIENVENIDO";
+			this->label1->Text = L"BIENVENUE";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// btn_entrar
@@ -272,18 +272,18 @@ namespace CppCLRWinformsProjekt {
 			if (login->log->Equals(true)) {
 				this->btn_clientes->Enabled = true;
 				this->btn_ventas->Enabled = true;
-				this->label1->Text = "BIENVENIDO " + login->txt_login->Text;
+				this->label1->Text = "BIENVENUE " + login->txt_login->Text;
 				this->btn_entrar->Text = "Logout";
 			}
 			this->Visible = true;
 		}
 		else if (this->btn_entrar->Text == "Logout") {
 			String^  nombre = this->label1->Text;
-			MessageBox::Show(L"Good Bye " + nombre->Substring(11, (nombre->Length)-11));
+			MessageBox::Show(L"Au revoir " + nombre->Substring(10, (nombre->Length)-10));
 			login->log = false;
 			this->btn_clientes->Enabled = false;
 			this->btn_ventas->Enabled = false;
-			this->label1->Text = "BIENVENIDO";
+			this->label1->Text = "BIENVENUE";
 			this->btn_entrar->Text = "Login";
 		}
 		

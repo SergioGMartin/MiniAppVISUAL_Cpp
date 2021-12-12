@@ -1,5 +1,6 @@
 #pragma once
 #include "DB.h"
+#include "NewUser.h"
 
 namespace DinamicMenu {
 
@@ -44,6 +45,9 @@ namespace DinamicMenu {
 	private: System::Windows::Forms::Label^ label1;
 	private: DB^ data;
 	public: Boolean^ log=false;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	public:
 
 	private:
 		/// <summary>
@@ -63,6 +67,8 @@ namespace DinamicMenu {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->txt_login = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// btn_login
@@ -73,7 +79,7 @@ namespace DinamicMenu {
 			this->btn_login->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_login->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_login->Location = System::Drawing::Point(72, 381);
+			this->btn_login->Location = System::Drawing::Point(73, 341);
 			this->btn_login->Name = L"btn_login";
 			this->btn_login->Size = System::Drawing::Size(273, 60);
 			this->btn_login->TabIndex = 9;
@@ -124,6 +130,30 @@ namespace DinamicMenu {
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"Username";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label3->Location = System::Drawing::Point(358, 9);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(53, 17);
+			this->label3->TabIndex = 10;
+			this->label3->Text = L"Accueil";
+			this->label3->Click += gcnew System::EventHandler(this, &Login::label3_Click);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::Info;
+			this->label4->Location = System::Drawing::Point(129, 418);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(153, 21);
+			this->label4->TabIndex = 11;
+			this->label4->Text = L"Créer un compte";
+			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click);
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -131,6 +161,8 @@ namespace DinamicMenu {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(149)), static_cast<System::Int32>(static_cast<System::Byte>(149)),
 				static_cast<System::Int32>(static_cast<System::Byte>(214)));
 			this->ClientSize = System::Drawing::Size(423, 486);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->btn_login);
 			this->Controls->Add(this->txt_pass);
 			this->Controls->Add(this->label2);
@@ -155,6 +187,22 @@ namespace DinamicMenu {
 		else {
 			MessageBox::Show(L"Usuario incorrecto.");
 		}
+	}
+
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+		DinamicMenu::NewUser^ newUser = gcnew DinamicMenu::NewUser();
+		this->Visible = false;
+		newUser->ShowDialog();
+		if (newUser->close->Equals(true)) {
+			this->Close();
+		}
+		else {
+			this->Visible = true;
+		}
+		
 	}
 };
 }

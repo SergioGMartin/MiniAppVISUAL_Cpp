@@ -90,9 +90,9 @@ namespace DinamicMenu {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(489, 73);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(110, 30);
+			this->label1->Size = System::Drawing::Size(71, 30);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Nombre";
+			this->label1->Text = L"Nom";
 			// 
 			// txt_nombre
 			// 
@@ -136,7 +136,7 @@ namespace DinamicMenu {
 			this->btn_guardar->Name = L"btn_guardar";
 			this->btn_guardar->Size = System::Drawing::Size(254, 60);
 			this->btn_guardar->TabIndex = 5;
-			this->btn_guardar->Text = L"Guardar";
+			this->btn_guardar->Text = L"Enregistrer";
 			this->btn_guardar->UseVisualStyleBackColor = false;
 			this->btn_guardar->Click += gcnew System::EventHandler(this, &Clientes::btn_guardar_Click);
 			// 
@@ -147,9 +147,9 @@ namespace DinamicMenu {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(489, 283);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(102, 30);
+			this->label2->Size = System::Drawing::Size(133, 30);
 			this->label2->TabIndex = 6;
-			this->label2->Text = L"Carrera";
+			this->label2->Text = L"Formation";
 			// 
 			// label3
 			// 
@@ -158,9 +158,9 @@ namespace DinamicMenu {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(489, 176);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(74, 30);
+			this->label3->Size = System::Drawing::Size(62, 30);
 			this->label3->TabIndex = 7;
-			this->label3->Text = L"Edad";
+			this->label3->Text = L"Âge";
 			// 
 			// data_grid
 			// 
@@ -209,9 +209,9 @@ namespace DinamicMenu {
 				static_cast<System::Byte>(0)));
 			this->btn_eliminar->Location = System::Drawing::Point(51, 533);
 			this->btn_eliminar->Name = L"btn_eliminar";
-			this->btn_eliminar->Size = System::Drawing::Size(108, 39);
+			this->btn_eliminar->Size = System::Drawing::Size(132, 39);
 			this->btn_eliminar->TabIndex = 10;
-			this->btn_eliminar->Text = L"Eliminar";
+			this->btn_eliminar->Text = L"Supprimer";
 			this->btn_eliminar->UseVisualStyleBackColor = false;
 			this->btn_eliminar->Click += gcnew System::EventHandler(this, &Clientes::btn_eliminar_Click);
 			// 
@@ -220,11 +220,11 @@ namespace DinamicMenu {
 			this->label_user->AutoSize = true;
 			this->label_user->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_user->Location = System::Drawing::Point(176, 543);
+			this->label_user->Location = System::Drawing::Point(189, 543);
 			this->label_user->Name = L"label_user";
-			this->label_user->Size = System::Drawing::Size(140, 22);
+			this->label_user->Size = System::Drawing::Size(121, 22);
 			this->label_user->TabIndex = 11;
-			this->label_user->Text = L"Seleccionado:";
+			this->label_user->Text = L"Sélectionné:";
 			// 
 			// label_cerrar
 			// 
@@ -307,11 +307,11 @@ namespace DinamicMenu {
 		data->Eliminar(nombre);
 		data->CloseCon();
 		this->Consulta();
-		label_user->Text = "Seleccionado:";
+		label_user->Text = "Sélectionné:";
 	}
 	private: System::Void data_grid_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ nombre = Convert::ToString(data_grid->SelectedRows[0]->Cells[0]->Value);
-		label_user->Text = "Seleccionado: " + nombre;
+		label_user->Text = "Sélectionné: " + nombre;
 	}
 	private: System::Void label_cerrar_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->ParentForm->Close();

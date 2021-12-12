@@ -18,5 +18,6 @@ public:
 	Boolean^ GetByName(String^, String^);
 	void Modificar(String^, String^, String^, String^);
 	void Eliminar(String^);
+	void AddUser(String^, String^);
 };
 
