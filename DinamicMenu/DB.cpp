@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "DB.h"
 
+using namespace System::Windows::Forms;
+using namespace System::Data;
+using namespace System::Drawing;
+
 DB::DB() {
 	this->connectionString = "datasource=localhost; username=root; password=""; database=db_jdbc;";
 	this->conn = gcnew MySqlConnection(this->connectionString);
@@ -32,10 +36,7 @@ void DB::AddClient(String^ n, String^ e, String^ c) {
 		cursor->ExecuteNonQuery();
 	}
 	catch (Exception^ e)
-	{
-		using namespace System::Windows::Forms;
-		using namespace System::Data;
-		using namespace System::Drawing;
+	{	
 		MessageBox::Show(e->Message);
 	}
 }
@@ -58,9 +59,6 @@ Boolean^ DB::GetByName(String^ login, String^ pass) {
 	}
 	catch (Exception^ e)
 	{
-		using namespace System::Windows::Forms;
-		using namespace System::Data;
-		using namespace System::Drawing;
 		MessageBox::Show(e->Message);
 	}
 	return log;
@@ -75,9 +73,6 @@ void DB::Modificar(String^ n, String^ a, String^ f, String^ ref) {
 	}
 	catch (Exception^ e)
 	{
-		using namespace System::Windows::Forms;
-		using namespace System::Data;
-		using namespace System::Drawing;
 		MessageBox::Show(e->Message);
 	}
 }
@@ -87,15 +82,11 @@ void DB::Eliminar(String^ n) {
 	MySqlCommand^ cursor = gcnew MySqlCommand(sql, this->conn);
 	try
 	{
-		using namespace System::Windows::Forms;
 		cursor->ExecuteNonQuery();
 		MessageBox::Show(L"Supprimé avec succès.");
 	}
 	catch (Exception^ e)
 	{
-		using namespace System::Windows::Forms;
-		using namespace System::Data;
-		using namespace System::Drawing;
 		MessageBox::Show(e->Message);
 	}
 }
@@ -109,9 +100,6 @@ void DB::AddUser(String^ name, String^ pass) {
 	}
 	catch (Exception^ e)
 	{
-		using namespace System::Windows::Forms;
-		using namespace System::Data;
-		using namespace System::Drawing;
 		MessageBox::Show(e->Message);
 	}
 }

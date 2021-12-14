@@ -185,7 +185,7 @@ namespace DinamicMenu {
 			this->Close();
 		}
 		else {
-			MessageBox::Show(L"Usuario incorrecto.");
+			MessageBox::Show(L"Utilisateur incorrect.");
 		}
 	}
 
